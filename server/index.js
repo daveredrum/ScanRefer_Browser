@@ -18,7 +18,7 @@ var config = require(path.join(__dirname, "/Config.js"));
 
 const MongoClient = require("mongodb").MongoClient
 const ObjectId = require("mongodb").ObjectID;
-const DB_URL = 'mongodb://127.0.0.1:27017';
+const DB_URL = 'mongodb://scanreferUser:intum3d@127.0.0.1:27017';
 let DB_NAME = 'mesh2cap';
 
 var session = require('client-sessions');
