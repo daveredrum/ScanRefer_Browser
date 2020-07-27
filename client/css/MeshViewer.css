@@ -1,0 +1,6 @@
+.overlay {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.9;
+  z-index: 1;
+}

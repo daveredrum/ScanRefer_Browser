@@ -1,0 +1,15 @@
+# database backup
+backup/
+
+# metadata
+meta/ScanRefer*
+
+# node modules
+node_modules/
+server/node_modules/
+
+# build
+client/build/
+
+# ScanNet data
+server/ScanNet*
