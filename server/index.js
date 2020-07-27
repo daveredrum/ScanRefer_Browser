@@ -18,7 +18,7 @@ var config = require(path.join(__dirname, "/Config.js"));
 
 const MongoClient = require("mongodb").MongoClient
 const ObjectId = require("mongodb").ObjectID;
-const DB_URL = 'mongodb://scanreferUser:intum3d@127.0.0.1:27017';
+const DB_URL = 'mongodb://scanreferUser:intum3d@127.0.0.1:27017/mesh2cap';
 let DB_NAME = 'mesh2cap';
 
 var session = require('client-sessions');
@@ -186,7 +186,7 @@ router.get("/resource/pose/:scene_id/:pose_file", function(req, res) {
 
 // aggregated pose file
 router.get("/resource/pose/:scene_id", function(req, res) {
-	let routed = path.join(__dirname, scannet.frames, req.params.scene_id, "all_pose.json");
+	let routed = path.join(__dirname, scannet.frames, req.params.scene_id, "all_pose.json/all_pose.json");
 	res.sendFile(routed);
 });
 
@@ -281,6 +281,7 @@ router.get("/meshviewer/:extra", function(req, res) {
 			});
 		}
 		catch (err) {
+			console.log(err);
 			console.log(append_head("Invalid request, redirecting to error page..."));
 			res.render("ErrorPage");
 		}
@@ -301,6 +302,7 @@ router.get("/database/test", function(req, res) {
 			res.sendStatus(200);
 		}
 		else {
+			console.log(err);
 			console.log(append_head("failed to connect MongoDB client"));
 			res.sendStatus(503);
 		}

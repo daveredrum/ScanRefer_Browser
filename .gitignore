@@ -16,3 +16,7 @@ client/build/
 
 # ScanNet data
 server/ScanNet*
+
+# cache
+python/SensorData.pyc
+python/__pycache__

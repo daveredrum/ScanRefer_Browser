@@ -176,7 +176,7 @@ class MeshViewer {
 				this.create_stats();
 				this.init_camera()
 				this.render_annotation_results();
-				this.preload_frame();
+				// this.preload_frame();
 				this.render();
 			});
 		});
