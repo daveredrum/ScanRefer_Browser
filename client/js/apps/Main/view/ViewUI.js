@@ -26,7 +26,7 @@ class ViewUI extends React.Component {
                     <label style={{"fontSize": "20px", "fontWeight": "bold"}}>Scene_id: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
                     <label style={{"fontSize": "20px", "fontWeight": "bold"}}>{this.props.scene_id}</label>
                 </div>
-                <div> 
+                <div style={{"marginTop": "25px"}}> 
                     <label style={{"fontSize": "20px", "fontWeight": "bold"}}>Progress: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
                     <div id={"progress_"+this.props.scene_id} style={{"width": "70%", "height": "100%", "display": "inline-block"}}>
                     {/* <div id={"progress_"+this.props.scene_id} style={{"width": "80%", "height": "100%", "display": "inline-block"}}> */}
@@ -43,19 +43,23 @@ class ViewUI extends React.Component {
                     <label style={{"fontSize": "20px", "fontWeight": "bold"}}>Scene: &nbsp; &nbsp; &nbsp;</label>
                     <label id={"unambi_scene_"+this.props.scene_id} style={{"fontSize": "20px", "width": "100px"}}></label>
                 </div> */}
-                <div> 
+                <div style={{"marginTop": "20px"}}> 
                     <label style={{"fontSize": "20px", "fontWeight": "bold"}}>Object: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
                     <select id={"select_object_"+this.props.scene_id} className="form-control" style={{"width": "200px", "fontSize": "16px", "display": "inline"}}>{this.render_objects()}</select>
                 </div>
+                <div style={{"marginTop": "30px"}}> 
+                    <label style={{"fontSize": "20px", "fontWeight": "bold"}}>Operation: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                    <button id={"submit_view_"+this.props.scene_id} className="btn btn-success" style={{"fontSize": "16px", "display": "inline", "width": "150px"}}>View</button>
+                </div>
             </div>
-            <div style={{"position": "absolute", "marginLeft": "35%", "marginTop": "320px", "width": "700px", "fontSize": "16px", "display": "inline"}}> 
+            {/* <div style={{"position": "absolute", "marginLeft": "35%", "marginTop": "320px", "width": "700px", "fontSize": "16px", "display": "inline"}}>  */}
             {/* <div style={{"position": "absolute", "marginLeft": "40%", "marginTop": "320px", "width": "700px", "fontSize": "16px", "display": "inline"}}>  */}
                 {/* <button id={"submit_delete_"+this.props.scene_id} className="btn btn-danger" style={{"fontSize": "16px", "width": "100px", "display": "inline"}} disabled>Delete</button> */}
-                <button id={"submit_verify_"+this.props.scene_id} className="btn btn-warning" style={{"fontSize": "16px", "display": "inline", "width": "100px", "marginLeft": "30px"}} disabled>Verify</button>
+                {/* <button id={"submit_verify_"+this.props.scene_id} className="btn btn-warning" style={{"fontSize": "16px", "display": "inline", "width": "100px", "marginLeft": "30px"}} disabled>Verify</button>
                 <button id={"submit_choose_"+this.props.scene_id} className="btn btn-primary" style={{"fontSize": "16px", "display": "inline", "width": "100px", "marginLeft": "30px"}} disabled>Select</button>
-                <button id={"submit_annotate_"+this.props.scene_id} className="btn btn-primary" style={{"fontSize": "16px", "display": "inline", "width": "100px", "marginLeft": "30px"}} disabled>Annotate</button>
-                <button id={"submit_view_"+this.props.scene_id} className="btn btn-success" style={{"fontSize": "16px", "display": "inline", "width": "100px", "marginLeft": "30px"}}>View</button>
-            </div>
+                <button id={"submit_annotate_"+this.props.scene_id} className="btn btn-primary" style={{"fontSize": "16px", "display": "inline", "width": "100px", "marginLeft": "30px"}} disabled>Annotate</button> */}
+                {/* <button id={"submit_view_"+this.props.scene_id} className="btn btn-success" style={{"fontSize": "16px", "display": "inline", "width": "100px", "marginLeft": "30px"}}>View</button> */}
+            {/* </div> */}
         </div>
         );
     }

@@ -159,7 +159,7 @@ class MeshViewer {
 				// this.scene.add(this.axis);
 
 				document.getElementById("loading_container").style.display = "none";
-				document.getElementById("image_container").style.display = "block";
+				// document.getElementById("image_container").style.display = "block";
 				document.getElementById("button_container").style.display = "block";
 
 				// render instance list
@@ -206,13 +206,13 @@ class MeshViewer {
 		this.stats.begin();
 		// set current camera
 		// this.add_mesh(this.window_mesh.camera, [this.camera_light]);
-		let closest_pose = this.get_closest_pose();
-		let nav_vector = new THREE.Vector3();
-		this.window_mesh.camera.getWorldDirection(nav_vector);
+		// let closest_pose = this.get_closest_pose();
+		// let nav_vector = new THREE.Vector3();
+		// this.window_mesh.camera.getWorldDirection(nav_vector);
 		// highlight the intersected object
 		this.get_intersection();
 		// render
-		if (this.preload_complete) this.render_frame(closest_pose);
+		// if (this.preload_complete) this.render_frame(closest_pose);
 		this.renderer.render( this.scene, this.window_mesh.camera );
 		this.window_mesh.advance(0, 8);
 		this.stats.end();

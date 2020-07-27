@@ -1,6 +1,9 @@
 # database backup
 backup/
 
+# data
+data/
+
 # metadata
 meta/ScanRefer*
 

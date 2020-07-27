@@ -117,7 +117,7 @@ function append_head(message) {
 	return head+message;
 }
 
-const scanrefer_data = organize_data(JSON.parse(fs.readFileSync("static/data/ScanRefer_filtered.json")))
+// const scanrefer_data = organize_data(JSON.parse(fs.readFileSync("static/data/ScanRefer_filtered.json")))
 
 /*************************************/
 /********     Main Routes     ********/

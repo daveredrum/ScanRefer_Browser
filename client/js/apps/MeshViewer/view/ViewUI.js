@@ -31,13 +31,13 @@ class ViewUI extends React.Component {
         // </div>
         
         <React.Fragment>
-            <td style={{"width": "6%", "height": "100%", "display": "inline-block"}}>
+            <td style={{"width": "10%", "height": "100%", "display": "inline-block"}}>
                 <div style={{"fontSize": "16px"}}>{this.props.object_id}</div>
             </td>
-            <td style={{"width": "6%", "height": "100%", "display": "inline-block"}}>
+            <td style={{"width": "10%", "height": "100%", "display": "inline-block"}}>
                 <div style={{"fontSize": "16px"}}>{this.props.anno_id}</div>
             </td>
-            <td style={{"width": "6%", "height": "100%", "display": "inline-block"}}>
+            {/* <td style={{"width": "6%", "height": "100%", "display": "inline-block"}}>
                 <div id={"status_"+this.props.object_id+"_"+this.props.anno_id} style={{"fontSize": "16px", "color": this.status_palette[this.props.status]}}>{this.props.status}</div>
             </td>
             <td style={{"width": "8%", "height": "100%", "display": "inline-block"}}>
@@ -45,11 +45,11 @@ class ViewUI extends React.Component {
             </td>
             <td style={{"width": "8%", "height": "100%", "display": "inline-block"}}>
                 <div style={{"fontSize": "14px"}}>{this.props.ver_worker_id}</div>
-            </td>
-            <td style={{"width": "51%", "height": "100%", "display": "inline-block"}}>
+            </td> */}
+            <td style={{"width": "60%", "height": "100%", "display": "inline-block"}}>
                 <div id={"description_"+this.props.object_id+"_"+this.props.anno_id} style={{"fontSize": "16px"}}>{this.props.description}</div>
             </td>
-            <td style={{"width": "15%", "height": "100%", "display": "inline-block"}}>
+            <td style={{"width": "20%", "height": "100%", "display": "inline-block"}}>
                 <button id={"view_"+this.props.object_id+"_"+this.props.anno_id} className="btn btn-warning" style={{"display": "inline", "width": "45%", "marginLeft": "2.5%"}}>Focus</button>
                 <button id={"scene_"+this.props.object_id+"_"+this.props.anno_id} className="btn btn-success" style={{"display": "inline", "width": "45%", "marginLeft": "5%"}}>Scene</button>
                 {/* <a id={"comment_"+this.props.object_id+"_"+this.props.anno_id} tabIndex="0" className="btn btn-info" role="button" style={{"display": "inline-block", "width": "32%", "marginLeft": "4%"}}  data-trigger="focus" data-toggle="popover" data-placement="top" data-content="">Comments</a> */}
