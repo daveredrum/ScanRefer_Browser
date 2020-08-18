@@ -1,4 +1,4 @@
-// var http = require("http");
+var http = require("http");
 var https = require("https");
 var fs = require("fs");
 var path = require("path");
@@ -797,15 +797,15 @@ let async0 = new Promise((resolve, reject) => {
 
 
 Promise.all([async0]).then(res => {
-	// const server = http.createServer(app).listen(config.http_port, function() {
-	const opt = {
-		key: fs.readFileSync("cert/char.vc.in.tum.de.key"),
-		cert: fs.readFileSync("cert/char.vc.in.tum.de.cert")
-	};
-	const server = https.createServer(opt, app).listen(config.http_port, function() {
+	const server = http.createServer(app).listen(config.http_port, function() {
+	// const opt = {
+	//	key: fs.readFileSync("cert/char.vc.in.tum.de.key"),
+	//	cert: fs.readFileSync("cert/char.vc.in.tum.de.cert")
+	// };
+	// const server = https.createServer(opt, app).listen(config.http_port, function() {
 		const host = server.address().address;
 		const port = server.address().port;
-		// console.log("Example app listening at address http://%s in port: %s", host, port);
-		console.log("Example app listening at address https://%s in port: %s", host, port);
+		console.log("Example app listening at address http://%s in port: %s", host, port);
+		// console.log("Example app listening at address https://%s in port: %s", host, port);
 	});
 });

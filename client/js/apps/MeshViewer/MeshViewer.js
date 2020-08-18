@@ -29,6 +29,7 @@ class MeshViewer {
 		this.btn = new Object();
 		this.btn.none = document.getElementById("btn_none");
 		this.btn.surface = document.getElementById("btn_surface");
+		this.btn.screenshot = document.getElementById("btn_screenshot");
 		this.btn.info = document.getElementById("info_helper");
 		this.btn.close_info = document.getElementById("close_info");
 		this.info = document.getElementById("info_container");
@@ -38,12 +39,14 @@ class MeshViewer {
 		// this.btn.instance = document.getElementById("btn_instance");
 		this.add_listener(this.btn.none, "click", this.on_click_btn_none);
 		this.add_listener(this.btn.surface, "click", this.on_click_btn_surface);
+		this.add_listener(this.btn.screenshot, "click", this.on_click_btn_screenshot);
 		// his.add_listener(this.btn.instance, "click", this.on_click_btn_instance);
 		// this.add_listener(this.btn.info, "click", this.on_click_btn_info);
 		// this.add_listener(this.btn.close_info, "click", this.on_click_close_info);
 		this.add_listener(this.btn.control, "click", this.on_click_btn_control);
 		this.add_listener(this.btn.close_control, "click", this.on_click_close_control);
 		this.add_listener(document, "keydown", this.on_keydown_keyc);
+		this.add_listener(document, "keydown", this.on_keydown_keys);
 		this.add_listener(document, "click", this.on_dismiss_popover);
 
 		// setup window mesh
@@ -56,8 +59,8 @@ class MeshViewer {
 		this.scene.background = new THREE.Color( 0xffffff );
 
 		// renderer
-		this.context = this.window_mesh.canvas.getContext("webgl2");
-		this.renderer = new THREE.WebGLRenderer( { canvas: this.window_mesh.canvas, context: this.context } );
+		this.context = this.window_mesh.canvas.getContext("webgl2", {preserveDrawingBuffer: true});
+		this.renderer = new THREE.WebGLRenderer( { canvas: this.window_mesh.canvas, context: this.context, preserveDrawingBuffer: true } );
 		this.renderer.setSize( this.window_mesh.window_width, this.window_mesh.window_height );
 
 		// raycaster
@@ -686,6 +689,19 @@ class MeshViewer {
 			}
 		});
 	}
+
+	save_file(strData, filename) {
+        	let link = document.createElement('a');
+        	if (typeof link.download === 'string') {
+            		document.body.appendChild(link); //Firefox requires the link to be in the body
+            		link.download = filename;
+            		link.href = strData;
+            		link.click();
+            		document.body.removeChild(link); //remove the link when done
+        	} else {
+            		location.replace(uri);
+        	}
+    	}
 	
 	/********************************************
      *************  Event handlers  *************
@@ -700,6 +716,20 @@ class MeshViewer {
 		console.log("show the mesh surface, current selected instance: "+this.selected_id);
 		this.mesh_view = 1;
 		this.render_mesh_surface();
+	}
+
+	on_click_btn_screenshot() {
+		try {
+			let strDownloadMime = "image/octet-stream";
+            let strMime = "image/jpeg";
+            let imgData = this.renderer.domElement.toDataURL(strMime);
+
+            this.save_file(imgData.replace(strMime, strDownloadMime), "screenshot.jpg");
+
+        } catch (e) {
+            console.log(e);
+            return;
+        }
 	}
 
 	on_click_btn_info() {
@@ -888,6 +918,13 @@ class MeshViewer {
 			else {
 				this.render_mesh_annotated();
 			}
+		}
+	}
+
+	on_keydown_keys(event) {
+		if (event.keyCode === 83) {
+			event.preventDefault();
+			this.on_click_btn_screenshot();
 		}
 	}
 

@@ -24,6 +24,7 @@ class RootUI extends React.Component {
                     <div id="view_container">
                         <button type="button" id="btn_none" className="btn btn-outline-primary">none</button>
                         <button type="button" id="btn_surface" className="btn btn-outline-primary">surface</button>
+			<button type="button" id="btn_screenshot" className="btn btn-outline-primary">screenshot</button>
                         {/* <button type="button" id="btn_instance" className="btn btn-default">instance</button> */}
                     </div>
                     {/* <div>
