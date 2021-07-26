@@ -21,6 +21,10 @@ if __name__ == "__main__":
 
         for data in MESH2CAP:
             if data["scene_id"] in scan_list:
+                # rename anno_id to ann_id
+                data["ann_id"] = data["anno_id"]
+                data.pop("anno_id")
+
                 mesh2cap_split.append(data)
 
         with open("backup/ScanRefer_raw_{}.json".format(split), "w") as f:
