@@ -7,7 +7,7 @@ from pymongo import MongoClient
 from itertools import chain
 
 # OUTPUT_PATH = "server/backup/{}.json" # time stamp
-SCANNETV2 = "python/Mesh2Loc/data/scannetv2-labels.combined.tsv"
+SCANNETV2 = "data/scannetv2-labels.combined.tsv"
 NYUCLASSES = ['cabinet', 'bed', 'chair', 'sofa', 'table', 'door', 'window', 'bookshelf', 'picture', 'counter', 'desk', 'curtain', 'refridgerator', 'bathtub', 'shower curtain', 'toilet', 'sink', 'others']
 NUM_CLASSES = len(NYUCLASSES)
 MONGODB_URL = "mongodb://scanreferUser:intum3d@127.0.0.1:27017/mesh2cap"
