@@ -29,7 +29,7 @@ if __name__ == "__main__":
                 data["ann_id"] = data["anno_id"]
                 data.pop("anno_id")
 
-                if object_id in selected_in_scene and len(selected_in_scene.split(" ")) == 1:
+                if object_id in selected_in_scene:
                     mesh2cap_split.append(data)
 
         with open("server/backup/ScanRefer_raw_{}.json".format(split), "w") as f:
