@@ -5,7 +5,7 @@ from datetime import datetime
 from pymongo import MongoClient
 
 OUTPUT_PATH = "server/backup/{}.json" # time stamp
-MONGODB_URL = "mongodb://scanreferUser:intum3d@127.0.0.1:27017"
+MONGODB_URL = "mongodb://scanreferUser:intum3d@127.0.0.1:27017/mesh2cap"
 MONGODB_NAME = "mesh2cap"
 COLLECTION_NAME = "Mesh2Cap"
 SCAN_ID = "00"
