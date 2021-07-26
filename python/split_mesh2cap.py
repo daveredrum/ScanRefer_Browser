@@ -20,12 +20,17 @@ if __name__ == "__main__":
         mesh2cap_split = []
 
         for data in MESH2CAP:
+            object_id = data["object_id"]
+            selected_in_scene = data["verify"]["selected_in_scene"]
+            selected_in_view = data["verify"]["selected_in_view"]
+
             if data["scene_id"] in scan_list:
                 # rename anno_id to ann_id
                 data["ann_id"] = data["anno_id"]
                 data.pop("anno_id")
 
-                mesh2cap_split.append(data)
+                if object_id in selected_in_scene and len(selected_in_scene.split(" ")) == 1:
+                    mesh2cap_split.append(data)
 
         with open("server/backup/ScanRefer_raw_{}.json".format(split), "w") as f:
             json.dump(mesh2cap_split, f, indent=4)
