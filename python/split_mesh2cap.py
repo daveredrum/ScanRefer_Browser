@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
                 mesh2cap_split.append(data)
 
-        with open("backup/ScanRefer_raw_{}.json".format(split), "w") as f:
+        with open("server/backup/ScanRefer_raw_{}.json".format(split), "w") as f:
             json.dump(mesh2cap_split, f, indent=4)
 
 
