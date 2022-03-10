@@ -70,7 +70,7 @@ class Main {
         view_ui = document.createElement("div");
         view_ui.id = "ViewUI";
         this.content_container.appendChild(view_ui);
-        for (let i = 0; i < view_list_snippet.length / 2; i++) {
+        for (let i = 0; i < view_list_snippet.length; i++) {
             // get view_ui
             let view_container = document.createElement("div");
             view_ui.appendChild(view_container)
@@ -296,7 +296,7 @@ class Main {
         }
     }
 
-    set_scene_chunks(scene_list, chunk_size=10) {
+    set_scene_chunks(scene_list, chunk_size=5) {
         this.scene_chunks = new Array();
         for (let offset = 0; offset < scene_list.length; offset += chunk_size) {
             this.scene_chunks.push(scene_list.slice(offset, offset + chunk_size));
