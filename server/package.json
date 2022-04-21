@@ -9,7 +9,7 @@
     "compression": "^1.7.2",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "mongodb": "^3.1.0-beta4",
     "pug": "^2.0.0-rc.2",
     "request": "^2.88.0",
