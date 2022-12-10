@@ -7,7 +7,7 @@
     "body-parser": "^1.18.2",
     "client-sessions": "^0.8.0",
     "compression": "^1.7.2",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "fs": "0.0.1-security",
     "jquery": "^3.2.1",
     "mongodb": "^3.1.0-beta4",
